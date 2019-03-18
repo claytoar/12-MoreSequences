@@ -593,8 +593,14 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
 
     circle.attach_to(window)
     points = generate_points_on_circle(circle, number_of_lines)
+    current_index = 0
     for k in range(len(points)):
-        line = rg.Line(points[k - hops_to_next_point], points[k])
+
+        start = points[current_index]
+        current_index = (current_index + hops_to_next_point) % len(points)
+        stop = points[current_index]
+
+        line = rg.Line(start, stop)
         line.color = color
         line.thickness = thickness
         line.arrow = 'last'
