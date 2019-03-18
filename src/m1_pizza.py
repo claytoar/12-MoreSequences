@@ -602,7 +602,6 @@ def fancy_polygon(window, circle, number_of_lines, hops_to_next_point, color,
 
     window.render()
 
-
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
